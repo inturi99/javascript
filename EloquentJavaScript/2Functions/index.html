@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script>
+		var square = function (x) {
+			return x * x;
+		}
+		var power = function (base, exponent){
+			var result = 1;
+			for(var count = 0; count < exponent; count++){
+				result *= base;
+			}
+			return result;
+		}
+//------------------------------------------------
+//global varible
+		var x = "A";
+	  function setVarToB(){
+			x = "B";
+		}
+		document.write(setVarToB()); //undefined
+// local varible
+   function setVarToC () {
+   	 var x;
+   	 x = "C";
+   }
+   document.write(setVarToC());  //undefined
+   document.write("<br/>");
+ //---------------------------------------------
+ var multiplyAbsolute = function (number , factor) {
+        function multiply(number) {
+        	return number * factor;
+        }
+        if(number < 0)
+        	return multiply(-number);
+        else
+           return multiply(number);
+ }
+ document.write(multiplyAbsolute(2, 2));
+  document.write("<br/>");
+
+ // --------------------------------------------
+ //     stack
+/* function chicken(){
+ 	return egg();
+ }
+ function egg(){
+ 	return chicken();
+ }
+ print(chicken() + "came first");
+ */
+ //---------------------------------------------
+ // function values
+ var a = null;
+ function b (){
+ 	return "B";
+ }
+
+ //clojure
+ function createFunction() {
+ 	var local=100;
+ 	return function(){
+ 		return local;
+ 	}
+ }
+ document.write((a || b) ());
+ document.write("<br/>");
+ function makeAdder(amount){
+ 	return function(number){
+ 	return number + amount;	
+ 	}
+ 	
+ }
+  var addTwo = makeAdder(10);
+   document.write(addTwo(5));
+// Optional Arguments
+document.write("<br/>"+ "Optional Arguments" +"<br/>");
+
+
+function power1(number, exponent){
+	var result = 1;
+	if(exponent == undefined){
+		exponent = 2;
+	}
+	for(var count = 0; count < exponent; count++){
+		result *= base;
+	}
+	return result;
+}
+document.write("<br/>");
+function zeroPad(number, width){
+	var string = String(Math.round(number));
+	var size = string.lenth;
+	document. write(size);
+	while(string.length < width){
+		string = "O" + string;
+	}
+	return string;
+}	
+
+document.write (zeroPad(10,9));
+document.write("<br/> Recursion")
+
+function power2 (base, exponent) {
+  if(exponent == 0)
+  	return 1;
+  else
+  	return base * power2(base, exponent - 1);
+}
+
+
+function findSequence (goal) {
+	 function find (start, history) {
+	 	 if(start == goal)
+	 	 	return history;
+	 	 else if (start > goal)
+	 	 	return null;
+	 	 else return find(start + 5, " ( "+ history + "+ 5 ) ") || 
+	 	 	          find(start * 3, " ( " + history + "* 3 )");
+	 	 }
+	 	 return find(1, "1");
+}
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
