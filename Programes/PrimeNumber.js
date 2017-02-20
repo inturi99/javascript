@@ -1,7 +1,37 @@
 /**
  * Created by INTURI on 09-04-2014.
  */
-function primeNumbers(n1,n2){
+/*
+IS Number Prime
+*/
+
+var isprime = function(n){
+  for(var i=2;i<n;i++){
+    if(n % i == 0){
+      return false;
+    }
+  } 
+  return n > 1
+}
+
+for(var i=0; i<=100;i++){
+  if(isprime(i)){
+    console.log(i)
+  }
+}
+
+var primenumbers = function(n1,n2){
+  for (var i = n1; i <=n2; i++){
+    if(isprime(i)){
+      console.log(i)
+    }
+  }
+}
+/*
+
+*/
+
+var primenumbers1 = function (n1,n2){
     var i=0;
     var j=0;
    for(i=n1+i;i<n2;i++){
