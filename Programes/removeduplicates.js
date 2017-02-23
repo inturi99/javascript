@@ -1,4 +1,4 @@
-var myarr = [1,1,2,2,3,4,2,1,6,6,7,8,8,9,9,9];
+var myArray = [1,1,2,2,3,4,2,1,6,6,7,8,8,9,9,9];
 
 var remomeduplicates = function (arr) {
     var temp =[]
@@ -10,8 +10,8 @@ var remomeduplicates = function (arr) {
     return temp	
 }
 
-remomeduplicates(myarr)
+remomeduplicates(myArray)
 
-var result= myarr.filter(function(value,index,array) {
+var result= myArray.filter(function(value,index,array) {
 	return  array.indexOf(value) == index;
 });
