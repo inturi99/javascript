@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript">
+	var myArray = new Array(3);
+	for ( var i = 0; i < 3; i++){
+		myArray[i] = new Array(3);
+	}
+   /* myArray[0][0] = 1; myArray [0] [1] = 2; myArray [0] [2] = 3;
+    myArray[1][0] = 4; myArray [1] [1] = 5; myArray [1] [2] = 6;
+    myArray[2][0] = 7; myArray [2] [1] = 8; myArray [2] [2] = 9;
+  */
+var start = 1;
+  for (var i = 0; i < 3; i++) {
+        for(var j = 0;  j < 3; j++){ 
+        	myArray[i][j] = start;
+        	start = start + 1;
+        }
+    }
+       
+   for (var i = 0; i < 3; i++) {
+        for(var j = 0;  j < 3; j++){ 
+        	document.write(myArray[i][j] + "&emsp;");
+        }
+    document.write("<br>")
+   }
+
+   document.write("<br>");
+   document.write("&emsp; + ");
+   document.write("<br>");
+    document.write("<br>");
+ 
+var myArray1 = new Array(3);
+	for ( var i = 0; i < 3; i++){
+		myArray1[i] = new Array(3);
+	}
+  var start = 9;
+  for (var i = 0; i < 3; i++) {
+        for(var j = 0;  j < 3; j++){ 
+        	myArray1[i][j] = start;
+        	start = start - 1;
+        }
+    }
+       
+   for (var i = 0; i < 3; i++) {
+        for(var j = 0;  j < 3; j++){ 
+        	document.write(myArray1[i][j] + "&emsp;");
+        }
+    document.write("<br>")
+   }
+
+    document.write("<br>");
+   document.write("&emsp; = ");
+   document.write("<br>");
+    document.write("<br>");
+  var myArray2 = new Array(3);
+	for ( var i = 0; i < 3; i++){
+		myArray2[i] = new Array(3);
+	}
+   for (var i = 0; i < 3; i++) {
+        for(var j = 0;  j < 3; j++){ 
+        	myArray2[i][j] = myArray[i][j] + myArray1[i][j]; 	
+        }
+    }
+       
+   for (var i = 0; i < 3; i++) {
+        for(var j = 0;  j < 3; j++){ 
+        	document.write(myArray2[i][j] + "&emsp;");
+        }
+    document.write("<br>")
+   }
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
