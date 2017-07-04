@@ -125,7 +125,20 @@ function findSequence (goal) {
 	 	 return find(1, "1");
 }
 
+//Growing Functions
 
+function printFarmInventory(cows, chickens) {
+	var cowString = String(cows);
+	while(cowString.length < 3 )
+		cowString = "0" + cowString;
+	console.log(cowString + "Cows");
+	var chickenString = String(chickens);
+	while(chickenString.length < 3)
+		chickenString = "0" + chickenString;
+	console.log(chickenString + "Chickens");
+}
+document.write("<br/> Growing Functions");
+document.write(printFarmInventory(7,11));
 
 	</script>
 </head>
