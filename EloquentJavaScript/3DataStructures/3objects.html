@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript">
+		var day1 = {
+			squirrel: false,
+			events: ["work", "touched tree", "pizza", "runinng", "television"]
+		};
+		console.log(day1.squirrel); // false
+		console.log(day1.wolf);    // undefined
+		day1.wolf = false;
+		console.log(day1.wolf);  // false
+		console.log(day1);
+
+		var description = {
+			work: "Went to work",
+			"touched tree": "Touched a tree"
+		};
+
+		var anObject = {
+			left: 1, right: 1
+		};
+		console.log(anObject.left); //1
+		delete anObject.left;
+		console.log(anObject.left); // undefined
+		console.log("left" in anObject); // false
+        console.log("right" in anObject); // true
+
+        var jpurnal = [
+        {events: ["work", "touched tree", "pizza", "runinng", "television"], squirrel: false},
+        {events: ["work", "ice cream", "califlower", "lasagna", "touched tree", "brushed teeth" ], squirrel: false},
+        {events: ["weekend", "cycling", "break", "peanuts", "beer"], squirrel: true}];
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
