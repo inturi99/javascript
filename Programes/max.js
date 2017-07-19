@@ -7,15 +7,14 @@ if(arr[i] > m) {
 }
 return m;
 }
-
 var a = [10, 20, 30, 40, 50];
-
-document.write(max(a));
-
 
 var max1 = a.reduce(function (a, b) {
 return Math.max(a, b)
 });
 
-document.wirte(max1(a));
+
+document.write(max(a));
+
+document.wirte(max1);
 
