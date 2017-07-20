@@ -1,3 +1,5 @@
+let maxthreenumbers =  (x, y, z) => (x > y & x > z) ? x : ( y > x & y > z) ? y : z
+
 var max = function(arr){
 var m  = arr[0];
 for (var i = 1; i < arr.length; i++) {
