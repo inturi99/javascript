@@ -20,3 +20,8 @@ document.write(max(a));
 
 document.wirte(max1);
 
+var x = [10, 20, 60, 30, 40, 50];
+
+var max2 = x.reduce(function(a,b) {
+ return a > b ? a : b
+})
