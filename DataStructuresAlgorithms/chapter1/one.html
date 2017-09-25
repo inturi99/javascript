@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript">
+		console.log("Enter a mont number: ");
+		var monthNumber = "2";
+		var monthName;
+		switch (monthNumber) {
+			case "1":
+				monthName = "January";
+				break;
+			case "2":
+                monthName = "February";
+				break;
+			case "3":
+				monthName = "March";
+				break;
+			case "4":
+			   nodeName = "April";
+			   break;
+			case "5":
+				monthName = "May";
+				break;
+			case "6":
+                monthName = "June";
+				break;
+			case "7":
+				monthName = "July";
+				break;
+			case "8":
+			   nodeName = "August";
+			   break;
+			case "9":
+				monthName = "September";
+				break;
+			case "10":
+                monthName = "October";
+				break;
+			case "11":
+				monthName = "November";
+				break;
+			case "12":
+			   nodeName = "December";
+			   break;
+			default:
+				"bad input"
+		}
+        
+        var number = 1;
+        var sum = 0;
+        while(number < 11){
+        	sum += number;
+        	++number;
+        }
+        console.log(sum);
+
+        var number1 = 1;
+        var sum1 = 0;
+
+        for(var number1 = 1; number1 < 11; number1++){
+        	sum1 +=number1;
+        }
+
+        console.log(sum1);
+
+        var number2 = [3,7,12,22,100];
+        var sum3= 0;
+        for(var i= 0; i<number2.length; i++){
+        	sum3 += number2[i];
+        }
+       console.log(sum3);
+
+       var fact = function (n) {
+       	var p = 1;
+       	for (var i = n; i >= 1; --i){
+       		p *= i;
+       	}
+       	return p;
+       }
+   console.log(fact(6));
+    
+    var curve = function(arr, amount){
+    	for (var i = 0; i<arr.length; ++i){
+    		arr[i] +=amount;
+    	}
+    }
+
+    	var grades = [77, 73, 74, 81, 90];
+    	curve(grades, 5);
+       console.log(grades);
+
+       function showScope(){
+       	return scope;
+       }
+      
+       var scope = "global";
+       console.log(scope);
+       console.log(showScope());
+      
+      function showScope1 () {
+      	var scope1 = "local";
+      	return scope1; 
+      }
+      var scope1 = "global";
+      console.log(scope1);
+      console.log(showScope1());
+      console.log(scope1);
+     
+     for(var i =1; i <= 10; ++i){
+     	console.log("Hello world");
+     }
+
+     function factorial (n){
+     	if (n == 1){
+     		return n;
+     	} else {
+     		return n * factorial(n-1);
+     	}
+     }
+
+     console.log(factorial(5));
+     
+     /*
+     5 * factorial(4)
+     5 * 4 * factorial(3)
+     5 * 4 * 3 * factorial(2)
+     5 * 4 * 3 * 2 * factorial(1)
+     5 * 4 * 3 * 2 * 1
+     5 * 4 * 3 * 2
+     5 * 4 * 6
+     5 * 24
+     120
+     */
+
+
+function checking (amount) {
+	this.balance = amount;
+	this.deposite = deposite;
+	this.withdraw = withdraw;
+	this.toString = toString;
+	
+}
+
+function deposite (amount) {
+	this.balance += amount;
+	
+}
+
+function withdraw (amount){
+	if(amount <= this.balance){
+		this.balance -= amount;
+	}
+
+	if(amount > this.balance){
+		console.log("insufficient funds");
+	}
+}
+
+function toString () {
+	return "Balance: " + this.balance;
+}
+
+ 
+ var account = new checking(500);
+  account.deposite(1000);
+  console.log(account.toString());
+  account.withdraw(750);
+  console.log(account.toString());
+  account.withdraw(800);
+  console.log(account.toString());
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
