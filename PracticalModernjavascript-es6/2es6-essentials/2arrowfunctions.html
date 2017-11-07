@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript">
+        function name(parameters) {
+            //function body
+        }
+        var name = function (parameters) {
+            //function body
+        }
+        var name = (parameters) => {
+            //function body
+        }
+
+        // Lexical Scoping
+        var timer = {
+            seconds: 0,
+            start() {
+                setInterval(() => {
+                    this.seconds++
+                }, 1000)
+            }
+        }
+        timer.start()
+        setTimeout(function () {
+            console.log(timer.seconds)
+        }, 3500)
+
+        /*  function puzzle() {
+              return function () {
+                  console.log(arguments)
+              }
+          }
+          */
+        function puzzle() {
+            return () => console.log(arguments)
+        }
+        console.log(puzzle('a', 'b', 'c')(1, 2, 3))
+        // Arrow Function Flawors
+        var example = (parameters) => {
+            //function body
+        }
+        var double = (value) => {
+            return value * 2
+        }
+        console.log(double(10))
+        var double1 = (value) => value * 2
+        console.log(double1(11))
+        var double2 = value => value * 2
+        console.log(double2(12))
+
+        var objectFactory = () => ({
+            modular: 'es6'
+        })
+
+        console.log(objectFactory);
+        [1, 2, 3].map(value => {
+            number: value
+        })
+        // [undefined,undefined,undefined]
+        [1, 2, 3].map(value => ({
+            number: value,
+            verified: true
+        }))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
