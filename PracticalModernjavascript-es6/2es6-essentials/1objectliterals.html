@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript">
+	var book = {
+        title:'Modular ES6',
+        author: 'Nicolas',
+        publisher:'o reilly'
+    }
+    console.log(book)
+	var listeners = []
+	function listen(){}
+	var events = {
+		listeners:listeners,
+		listen:listen
+	}
+	var store = {}
+	var storage = {getItem,setItem,clear}
+	function getItem(key){
+		return key in store ? store[key] : null
+	}
+	function setItem(key, value){
+		store[key] = value
+	}
+	function clear(){
+     store = {}
+	}
+  // Computed Property Names
+  var experties = 'journalism'
+  var person = {
+	  name: 'Sharon',
+	  age:29,
+	  [experties]: {
+	  year:5,
+	  interests: ['international','politics','internet']
+  }
+  }
+  console.log('----Computd Property Names-------')
+console.log(person)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
