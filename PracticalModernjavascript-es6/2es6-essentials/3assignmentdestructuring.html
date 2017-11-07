@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript">
+    //Destructuring Objects
+    var character = {
+        name: 'Bruce',
+        pseudonym: 'Batman',
+        metadata:{
+            age:26,
+            gender:'male'
+        },
+        batarang:['gas pallet','bat-mobile control', 'bat-cuffs']
+    } 
+    // es5
+  //  var pseudonym = character.pseudonym
+    //es6
+    var {pseudonym} = character
+    console.log(pseudonym)
+    var {name, pseudonym} = character
+    console.log(name+''+pseudonym)
+    var {pseudonym:alias} =character
+    console.log(alias)
+
+    var {metadata: {gender}} = character
+    console.log(gender)
+
+    console.log(character.boots)
+    console.log(character['boots'])
+    var {boots} = character
+    console.log(boots)
+    // var {boots:{size}} = character
+    // console.log(size)
+    var {boots = {size: 10}} = character
+    console.log(boots)
+
+    var {['boo'+'ts']: characterboots} = character
+    console.log(characterboots)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
