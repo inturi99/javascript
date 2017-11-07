@@ -7,6 +7,7 @@ var reversestring = function(s) {
   return n;
 }
 console.log(reversestring("KRISHNA"));
+console.log(reversestring("12345"));
 
 //reverse number
 
