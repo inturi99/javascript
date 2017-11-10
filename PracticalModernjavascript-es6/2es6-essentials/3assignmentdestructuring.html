@@ -95,7 +95,141 @@
             console.log(options.make)
         }
         console.log(carFactory())
-        
+
+        //Destructuring Objects
+        var character = {
+            name: 'Bruce',
+            pseudonym: 'Batman',
+            metadata: {
+                age: 26,
+                gender: 'male'
+            },
+            batarang: ['gas pallet', 'bat-mobile control', 'bat-cuffs']
+        }
+        // es5
+        //  var pseudonym = character.pseudonym
+        //es6
+        var {
+            pseudonym
+        } = character
+        console.log(pseudonym)
+        var {
+            name,
+            pseudonym
+        } = character
+        console.log(name + '' + pseudonym)
+        var {
+            pseudonym: alias
+        } = character
+        console.log(alias)
+
+        var {
+            metadata: {
+                gender
+            }
+        } = character
+        console.log(gender)
+
+        console.log(character.boots)
+        console.log(character['boots'])
+        var {
+            boots
+        } = character
+        console.log(boots)
+        // var {boots:{size}} = character
+        // console.log(size)
+        var {
+            boots = {
+                size: 10
+            }
+        } = character
+        console.log(boots)
+
+        var {
+            ['boo' + 'ts']: characterboots
+        } = character
+        console.log(characterboots)
+
+        //Function parameter Destructuring 
+        function carFactory({
+            brand = 'Volkswagen',
+            make = 1999
+        }) {
+            console.log(brand)
+            console.log(make)
+        }
+        carFactory({
+            make: 2000
+        })
+
+        var car = {
+            owner: {
+                id: '12345',
+                name: 'Donald Draper'
+            },
+            brand: 'peugeot',
+            make: 2015,
+            model: '208',
+            preferences: {
+                airbags: true,
+                airconditoning: false,
+                color: 'red'
+            }
+        }
+        console.log(car)
+        var getCarProductModel = ({
+            brand,
+            make,
+            model
+        }) => ({
+            sku: brand + ':' + make + ':' + model,
+            brand,
+            make,
+            model
+        })
+
+        console.log(getCarProductModel(car))
+        // Use Cases for Destructuring
+        function getCoordinates() {
+            return {
+                x: 10,
+                y: 22,
+                z: -1,
+                type: '2d'
+            }
+        }
+
+        var {
+            x,
+            y
+        } = getCoordinates()
+
+
+        function random({
+            min = 1,
+            max = 10
+        } = {}) {
+            return Math.floor(Math.random() * (max - min)) + min
+        }
+
+        console.log(random())
+        console.log(random({
+            max: 24
+        }))
+
+        function splitDate(date) {
+            var rdate = /(\d+).(\d+).(\d+)/
+            return rdate.exec(date)
+        }
+
+        var [, year, month, date] = splitDate('2017-01-01')
+
+        var matches = splitDate('2017-09-02')
+
+        if (matches === null) {
+            return
+        }
+        var [, year, date, month] = matches
     </script>
 </head>
 
