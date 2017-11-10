@@ -7,40 +7,95 @@
     <title></title>
     <link rel="stylesheet" href="">
     <script type="text/javascript">
-    //Destructuring Objects
-    var character = {
-        name: 'Bruce',
-        pseudonym: 'Batman',
-        metadata:{
-            age:26,
-            gender:'male'
-        },
-        batarang:['gas pallet','bat-mobile control', 'bat-cuffs']
-    } 
-    // es5
-  //  var pseudonym = character.pseudonym
-    //es6
-    var {pseudonym} = character
-    console.log(pseudonym)
-    var {name, pseudonym} = character
-    console.log(name+''+pseudonym)
-    var {pseudonym:alias} =character
-    console.log(alias)
+        //Destructuring Objects
+        var character = {
+            name: 'Bruce',
+            pseudonym: 'Batman',
+            metadata: {
+                age: 26,
+                gender: 'male'
+            },
+            batarang: ['gas pallet', 'bat-mobile control', 'bat-cuffs']
+        }
+        // es5
+        //  var pseudonym = character.pseudonym
+        //es6
+        var {
+            pseudonym
+        } = character
+        console.log(pseudonym)
+        var {
+            name,
+            pseudonym
+        } = character
+        console.log(name + '' + pseudonym)
+        var {
+            pseudonym: alias
+        } = character
+        console.log(alias)
 
-    var {metadata: {gender}} = character
-    console.log(gender)
+        var {
+            metadata: {
+                gender
+            }
+        } = character
+        console.log(gender)
 
-    console.log(character.boots)
-    console.log(character['boots'])
-    var {boots} = character
-    console.log(boots)
-    // var {boots:{size}} = character
-    // console.log(size)
-    var {boots = {size: 10}} = character
-    console.log(boots)
+        console.log(character.boots)
+        console.log(character['boots'])
+        var {
+            boots
+        } = character
+        console.log(boots)
+        // var {boots:{size}} = character
+        // console.log(size)
+        var {
+            boots = {
+                size: 10
+            }
+        } = character
+        console.log(boots)
 
-    var {['boo'+'ts']: characterboots} = character
-    console.log(characterboots)
+        var {
+            ['boo' + 'ts']: characterboots
+        } = character
+        console.log(characterboots)
+        //Destructuring Arrays
+        var coordinates = [12, -7]
+        var [x, y] = coordinates
+        console.log(x + ' ' + y)
+
+        var names = ['James', 'L.', 'Howlet']
+        var [firstName, , lastName] = names
+        console.log(lastName)
+
+        var left = 10;
+        var right = 20;
+        [left, right] = [right, left]
+        console.log("Left " + left + " Right " + right)
+        //Function Parameter Defaults
+        function powerOf(base, exponent = 2) {
+            return Math.pow(base, exponent)
+        }
+        var powerOf1 = (base, exponent = 2) => Math.pow(base, exponent)
+        console.log(powerOf1(4))
+
+        function sumOf(a = 1, b = 2, c = 3) {
+            return a + b + c
+        }
+        var sumOf1 = (a = 1, b = 2, c = 3) => a + b + c
+        console.log(sumOf1(undefined, undefined, 10))
+        var defaultOption = {
+            brand: 'Volkswagen',
+            make: 1999
+        }
+
+        function carFactory(options = defaultOption) {
+            console.log(options.brand)
+            console.log(options.make)
+        }
+        console.log(carFactory())
+        
     </script>
 </head>
 
