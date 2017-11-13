@@ -7,8 +7,24 @@
     <title></title>
     <link rel="stylesheet" href="">
     <script type="text/javascript">
-  
+        function join1() {
+            var list = Array.prototype.slice.call(arguments)
+            return list.join(', ')
+        }
+        console.log(join1('first', 'second', 'third'))
 
+        function join2(...list) {
+            return list.join(', ')
+        }
+        console.log(join2('first', 'second', 'third'))
+
+        function join3(separator, ...list) {
+            return list.join(separator)
+        }
+        console.log(join3('; ', 'first', 'second', 'third'))
+
+        var sumAll = (...numbers) => numbers.reduce((total, next) => total + next)
+        console.log(sumAll(1, 2, 3, 5))
     </script>
 </head>
 
