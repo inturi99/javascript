@@ -7,6 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="">
     <script type="text/javascript">
+        // Rest Parameters
         function join1() {
             var list = Array.prototype.slice.call(arguments)
             return list.join(', ')
@@ -25,6 +26,41 @@
 
         var sumAll = (...numbers) => numbers.reduce((total, next) => total + next)
         console.log(sumAll(1, 2, 3, 5))
+
+        // Spread Operator
+        function cast() {
+            return [...arguments]
+        }
+        console.log(cast(1, 2, 3, 4))
+        console.log([...'show me'])
+
+        function cast1() {
+            return ['left', ...arguments, 'right']
+        }
+        console.log(cast1(1, 2, 3, 4))
+
+        var all = [1, ...[2, 3], 4, ...[5], 6, 7]
+        console.log(all)
+        // SHIFTING	AND	SPREADING
+        var list = ['A', 'B', 'C', 'D', 'E']
+        var first = list.shift()
+        var second = list.shift()
+        console.log(first + ' , ' + second)
+        var [first, second, ...other] = ['A', 'B', 'C', 'D', 'E']
+        console.log(other)
+
+        function multiply(left, right) {
+            return left * right;
+        }
+        var res = multiply(...[3, 4])
+        console.log(res)
+
+        function print(...list) {
+            console.log(list)
+        }
+        print(1, ...[2, 3], 4, ...[5, 6])
+
+        //new(Date.bind.apply(Date, [null, 2015, 11, 31]))
     </script>
 </head>
 
