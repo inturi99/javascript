@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript">
+       var text = `This is my  first template literals`
+    console.log(text)
+    var text1 = `I 'am "amazed" at these opportunities`
+    console.log(text1)
+     // String Interpolation
+     var name ='Shannon'
+     var text2 = `Hello ${name}!`
+     console.log(text2)
+    var text3=`the time and date is ${new Date().toLocaleString()}`
+    console.log(text3)
+    var text4 = `the result of 2 + 3 equals ${ 2 + 3}`
+    console.log(text4)
+    var text5 = `The template literals ${`is ${'nested'}` }!`
+    console.log(text5)
+    
+    //Multiline Template Literals
+      var escaped =
+      'The first line \n\
+      A second line \n\
+      Then a third line'
+      console.log(escaped)
+
+    //   var concatenated = 
+    //   'The first line\n' `
+    //   'A second line\n' `
+    //   'Then a third line'
+
+    //   console.log(concatenated)
+
+      var joined =[ 
+      'The first line\n',
+      'A second line\n',
+      'Then a third line'
+      ].join('\n')
+
+      console.log(joined)
+
+      var multiline =
+      `The first line
+       A second line
+       Then a third line`
+      console.log(multiline)
+      
+      var book = {
+          title: 'Modular ES6',
+          excerpt: 'Here goes some properly sanitized HTML',
+          tags: ['es6', 'template-literals', 'es6-in-depth']
+      }
+     var html = `<artical>
+     <header> 
+     <h1>${book.title}</h1></header>
+     <section>${book.excerpt}</section>
+     <footer>
+     <ul>
+     ${
+      book.tags
+     .map(t => `<li> ${t} </li>`)
+     .join('\n     ')
+      }
+     </ul>
+     </footer>
+     </artical>`
+
+     console.log(html)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
