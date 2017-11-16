@@ -69,8 +69,52 @@
      </ul>
      </footer>
      </artical>`
-
      console.log(html)
+
+     function getParagraph() {
+      return `
+      Dear Rod,
+      This is a template literal string that's indented
+      four spaces. However, you may have expected for it
+      to be not indented at all.
+      Nico
+      `
+    }
+     function unindent(text) {
+         return text.split('\n').map(line => line.slice(4)).join('\n').trim()
+     }
+     console.log(unindent(getParagraph()))
+
+     //Tagged Templates
+     
+     var text = String.raw `"\n" is taken literally
+        It' ll be escaped instead of interpreted.`
+        console.log(text)
+       
+       function tag(parts, ...values){
+           return parts.reduce(
+               (all, part, index) => all +values[index - 1] + part
+           )
+       }
+
+var name = 'Maurice'
+var emotion = 'thrilled'
+var text1 = tag `Hello , ${name}. I am ${emotion} to meet you`
+ console.log(text1)
+
+  function upper(parts, ...values){
+      return parts.reduce((all, part, index) => all + values[index - 1].toUpperCase() +part)
+  }
+  var text2 = upper `Hello , ${name}. I am ${emotion} to meet you`
+  console.log(text2)
+
+  function sanitized(parts, ...values){
+      return parts.reduce((all, part, index) => all + sanitize(values[index - 1]) + part)
+  }
+
+  var comment = 'Evil comment <iframe src = "http://evil.corp" > </iframe>'
+  var html = sanitized `<div> ${comment} </div>`
+  console.log(html)
     </script>
 </head>
 
