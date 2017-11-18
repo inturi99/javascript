@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <link rel="stylesheet" href="">
-    <script type="text/javascript">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
     //  function isItTrue(value){
     //      if(value === 2){
     //       var two = true
@@ -15,26 +15,82 @@
     //  }
     //  console.log(isItTrue(6))
 
-    function isItTrue(value){
-        var two
-         if(value === 2){
-          two = true
+    function isItTrue(value) {
+      var two
+      if (value === 2) {
+        two = true
+      }
+      return two
+    }
+    console.log(isItTrue(6))
+    //Block Scoping and let Statements
+
+    {
+      {
+        {
+          {
+            {
+              var deep = 'This is available from outer scope.'
+            }
+          }
+        }
+      }
+    }
+    console.log(deep)
+
+    /* let topmost = {} {
+           let inner = {} {
+             let innermost = {}
+           }
+           // attempts to access innermost here would throw
          }
-         return two
-     }
-     console.log(isItTrue(6))
-     //Block Scoping and let Statements
-
-     {{{{{ var deep = 'This is available from outer scope.'}}}}}
-     console.log(deep)
-
-     for(let i = 0; i < 2;i++){
-       console.log(i);
-     }
+         // attempts to access inner here would throw
+         // attempts to access innermost here would throw
+         */
+    for (let i = 0; i < 2; i++) {
+      console.log(i);
+    }
     // console.log(i)
-    
-    
-      </script>
+    // <- i is not defined
+
+    // function printNumbers() {
+    //   for (var i = 0; i < 10; i++) {
+    //     setTimeout(function () {
+    //       console.log(i)
+    //     }, i * 100)
+    //   }
+    // }
+    // console.log(printNumbers())
+
+    function printNumbers1() {
+      for (let i = 0; i < 10; i++) {
+        setTimeout(function () {
+          console.log(i)
+        }, i * 100);
+      }
+    }
+    console.log(printNumbers1())
+    // Temporal Dead Zone
+    // {
+    //   console.log(name)
+    //   let name = 'Stephen Hawking'
+    // }
+    function readName() {
+      return name;
+    }
+    let name = 'Stephen Hawking'
+    console.log(readName())
+    ////	<-	'Stephen	Hawking'
+
+    /*   function readName1() {
+         return name1;
+       }
+       console.log(readName1())
+        // <- //	ReferenceError:	name	is	not	defined
+       let name1 = 'Stephen Hawking'
+     
+    */
+  </script>
 </head>
 
 <body>

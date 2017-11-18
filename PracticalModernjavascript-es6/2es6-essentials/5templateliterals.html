@@ -7,55 +7,56 @@
     <title></title>
     <link rel="stylesheet" href="">
     <script type="text/javascript">
-       var text = `This is my  first template literals`
-    console.log(text)
-    var text1 = `I 'am "amazed" at these opportunities`
-    console.log(text1)
-     // String Interpolation
-     var name ='Shannon'
-     var text2 = `Hello ${name}!`
-     console.log(text2)
-    var text3=`the time and date is ${new Date().toLocaleString()}`
-    console.log(text3)
-    var text4 = `the result of 2 + 3 equals ${ 2 + 3}`
-    console.log(text4)
-    var text5 = `The template literals ${`is ${'nested'}` }!`
-    console.log(text5)
-    
-    //Multiline Template Literals
-      var escaped =
-      'The first line \n\
+        var text = `This is my  first template literals`
+        console.log(text)
+        var text1 = `I 'am "amazed" at these opportunities`
+        console.log(text1)
+        // String Interpolation
+        var name = 'Shannon'
+        var text2 = `Hello ${name}!`
+        console.log(text2)
+        var text3 = `the time and date is ${new Date().toLocaleString()}`
+        console.log(text3)
+        var text4 = `the result of 2 + 3 equals ${ 2 + 3}`
+        console.log(text4)
+        var text5 = `The template literals ${`is ${'nested'}` }!`
+        console.log(text5)
+
+        //Multiline Template Literals
+        var escaped =
+            'The first line \n\
       A second line \n\
       Then a third line'
-      console.log(escaped)
+        console.log(escaped)
 
-    //   var concatenated = 
-    //   'The first line\n' `
-    //   'A second line\n' `
-    //   'Then a third line'
+        //   var concatenated = 
+        //   'The first line\n' `
+        //   'A second line\n' `
+        //   'Then a third line'
 
-    //   console.log(concatenated)
+        //   console.log(concatenated)
 
-      var joined =[ 
-      'The first line\n',
-      'A second line\n',
-      'Then a third line'
-      ].join('\n')
+        var joined = [
+            'The first line\n',
+            'A second line\n',
+            'Then a third line'
+        ].join('\n')
 
-      console.log(joined)
+        console.log(joined)
 
-      var multiline =
-      `The first line
+        var multiline =
+            `The first line
        A second line
        Then a third line`
-      console.log(multiline)
-      
-      var book = {
-          title: 'Modular ES6',
-          excerpt: 'Here goes some properly sanitized HTML',
-          tags: ['es6', 'template-literals', 'es6-in-depth']
-      }
-     var html = `<artical>
+        console.log(multiline)
+
+        var book = {
+            title: 'Modular ES6',
+            excerpt: 'Here goes some properly sanitized HTML',
+            tags: ['es6', 'template-literals', 'es6-in-depth']
+        }
+        var html =
+            `<artical>
      <header> 
      <h1>${book.title}</h1></header>
      <section>${book.excerpt}</section>
@@ -69,52 +70,53 @@
      </ul>
      </footer>
      </artical>`
-     console.log(html)
+        console.log(html)
 
-     function getParagraph() {
-      return `
+        function getParagraph() {
+            return `
       Dear Rod,
       This is a template literal string that's indented
       four spaces. However, you may have expected for it
       to be not indented at all.
       Nico
       `
-    }
-     function unindent(text) {
-         return text.split('\n').map(line => line.slice(4)).join('\n').trim()
-     }
-     console.log(unindent(getParagraph()))
+        }
 
-     //Tagged Templates
-     
-     var text = String.raw `"\n" is taken literally
+        function unindent(text) {
+            return text.split('\n').map(line => line.slice(4)).join('\n').trim()
+        }
+        console.log(unindent(getParagraph()))
+
+        //Tagged Templates
+
+        var text = String.raw `"\n" is taken literally
         It' ll be escaped instead of interpreted.`
         console.log(text)
-       
-       function tag(parts, ...values){
-           return parts.reduce(
-               (all, part, index) => all +values[index - 1] + part
-           )
-       }
 
-var name = 'Maurice'
-var emotion = 'thrilled'
-var text1 = tag `Hello , ${name}. I am ${emotion} to meet you`
- console.log(text1)
+        function tag(parts, ...values) {
+            return parts.reduce(
+                (all, part, index) => all + values[index - 1] + part
+            )
+        }
 
-  function upper(parts, ...values){
-      return parts.reduce((all, part, index) => all + values[index - 1].toUpperCase() +part)
-  }
-  var text2 = upper `Hello , ${name}. I am ${emotion} to meet you`
-  console.log(text2)
+        var name = 'Maurice'
+        var emotion = 'thrilled'
+        var text1 = tag `Hello , ${name}. I am ${emotion} to meet you`
+        console.log(text1)
 
-  function sanitized(parts, ...values){
-      return parts.reduce((all, part, index) => all + sanitize(values[index - 1]) + part)
-  }
+        function upper(parts, ...values) {
+            return parts.reduce((all, part, index) => all + values[index - 1].toUpperCase() + part)
+        }
+        var text2 = upper `Hello , ${name}. I am ${emotion} to meet you`
+        console.log(text2)
 
-  var comment = 'Evil comment <iframe src = "http://evil.corp" > </iframe>'
-  var html = sanitized `<div> ${comment} </div>`
-  console.log(html)
+        function sanitized(parts, ...values) {
+            return parts.reduce((all, part, index) => all + sanitize(values[index - 1]) + part)
+        }
+
+        var comment = 'Evil comment <iframe src = "http://evil.corp" > </iframe>'
+        var html = sanitized `<div> ${comment} </div>`
+        console.log(html)
     </script>
 </head>
 
