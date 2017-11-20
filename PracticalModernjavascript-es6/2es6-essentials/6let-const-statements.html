@@ -90,6 +90,45 @@
        let name1 = 'Stephen Hawking'
      
     */
+    function readName2(){
+      return name2
+    }
+    let name2
+    console.log(readName2())
+  // Const Statement
+  const pi = 3.14
+  {
+   const pi = 6;
+    console.log(pi)
+  }
+  console.log(pi)
+
+  const people = ['Tesla','Musk']
+  people.push('Berners-Lee')
+  console.log(people)
+
+  var humans = people
+  humans = 'evil'
+  console.log(humans)
+
+  // const frozen = Object.freeze(['Ice', 'Icicle', 'Ice cube'])
+  // frozen.push('Water')
+  // console.log(frozen)
+
+// Merits of const and let
+ var items = ['a','b','c']
+ var todo = checkList(items)
+ todo.check()
+ console.log(items)
+  items = ['d', 'e']
+  todo.check()
+  console.log(items)
+
+  function checkList(items){
+    return {
+      check: () => items.shift()
+    }
+  }
   </script>
 </head>
 

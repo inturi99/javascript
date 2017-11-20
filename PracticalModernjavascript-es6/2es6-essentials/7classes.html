@@ -7,12 +7,43 @@
     <title></title>
     <link rel="stylesheet" href="">
     <script type="text/javascript">
-        const person = class {
+    function Fruit(name, calories){
+       this.name = name
+       this.calories = calories
+       this.pieces = 1
+   }
+   Fruit.prototype.chop = function(){
+       this.pieces++
+   }
+   Fruit.prototype.bite = function(person){
+       if(this.pieces < 1){
+           return
+       }
+       const calories = this.calories / this.pieces
+       person.satiety += calories
+       this.calories -= calories
+       this.pieces--
+   }
+   
+   const person = {satiety: 0}
+   const apple = new Fruit('apple', 140)
+    console.log(apple)
+    apple.chop()
+    apple.chop()
+    apple.chop()
+    console.log(apple)
+    apple.bite(person)
+    apple.bite(person)
+    apple.bite(person)
+    console.log(person.satiety)
+    console.log(apple.pieces)
+    console.log(apple.calories)
+        const person1 = class {
             constructor(name) {
                 this.name = name
             }
         }
-        createPersonClass = name => class extends person {
+        createPersonClass = name => class extends person1 {
             constructor(name) {
                 super(name)
             }
@@ -21,7 +52,7 @@
         const jake = new jakePerson()
         console.log(jake)
         //Properties	and	Methods	in	Classes
-        class Fruit {}
+        class Fruit2 {}
 
         function Fruit1() {
 
@@ -44,6 +75,41 @@
         console.log(counter.next)
         console.log(counter.next)
         console.log(counter.next)
+        class LocalStorage{
+            constructor(key){
+                this.key=key
+            }
+            get Data(){
+                return JSON.parse(localStorage.getItem(this.key))
+            }
+            set Data(data){
+                localStorage.setItem(this.key, JSON.stringify(data))
+            }
+
+        }
+        
+        const ls = new LocalStorage('groceries')
+        ls.data = ['Apples', 'Bananas', 'grapes']
+        console.log(ls.data)
+        
+         class Person4{
+             constructor(){
+                 this.satiety = 0
+             }
+             eat(fruit){
+                 while(fruit.pieces > 0){
+                     fruit.bite(this)
+                 }
+             }
+         }
+
+         const plum = new Fruit('plum', 40)
+
+         const person4 = new Person4()
+         person4.eat(plum)
+         console.log(person4.satiety)
+         
+
     </script>
 </head>
 
