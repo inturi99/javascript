@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript">
+        const person = class {
+            constructor(name) {
+                this.name = name
+            }
+        }
+        createPersonClass = name => class extends person {
+            constructor(name) {
+                super(name)
+            }
+        }
+        const jakePerson = createPersonClass('Jake')
+        const jake = new jakePerson()
+        console.log(jake)
+        //Properties	and	Methods	in	Classes
+        class Fruit {}
+
+        function Fruit1() {
+
+        }
+        class Log {
+            constructor(...args) {
+                console.log(args)
+            }
+        }
+        new Log('a', 'b', 'c')
+        class Counter {
+            constructor(start) {
+                this.count = start
+            }
+            get next() {
+                return this.count++
+            }
+        }
+        const counter = new Counter(2)
+        console.log(counter.next)
+        console.log(counter.next)
+        console.log(counter.next)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
