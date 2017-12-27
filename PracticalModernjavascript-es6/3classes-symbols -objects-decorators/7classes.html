@@ -103,13 +103,28 @@
              }
          }
 
-         const plum = new Fruit('plum', 40)
+         const plum = new Fruit('pl um', 40)
 
          const person4 = new Person4()
          person4.eat(plum)
          console.log(person4.satiety)
          
-
+         function person5(){
+             this.hunger = 100
+         }
+         person5.prototype.eat = function(){
+             this.hunger--
+         }
+         person5.isPerson = function(person){
+             return person instanceof person5
+         }
+         class MathHelper{
+             static sum(...numbers){
+                 return numbers.reduce((a, b) => a + b)
+             }
+         }
+     console.log(MathHelper.sum(1,2,3,4,5))
+     
     </script>
 </head>
 

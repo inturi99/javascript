@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript">
+     let d = [{"name": "krishna","x":"10","y":"20","z":"30"},
+              {"name": "venkat","x":"11","y":"21","z":"31"},
+              {"name": "srinu","x":"12","y":"22","z":"32"}];
+       
+       console.time("d")
+
+     let  result= d.reduce((m,n) => ({x: parseFloat(m.x) + parseFloat(n.x), 
+                                      y: parseFloat(m.y) + parseFloat(n.y),
+                                      z: parseFloat(m.z) + parseFloat(n.z)}))
+     console.log(result)
+     console.timeEnd("d")
+     console.time("d")
+     let result1 = d.map(a => ({x: parseFloat(a.x),
+                                y: parseFloat(a.y),
+                                z: parseFloat(a.z)})).reduce((m,n) => ({x: m.x + n.x,
+                                    y: m.y + n.y,
+                                    z: m.z + n.z}))
+     console.log(result1)  
+     console.timeEnd("d")
+
+     console.time("d")
+     let result2 = d.map(({x, y, z}) => ({x: parseFloat(x),
+                                          y: parseFloat(y),
+                                          z: parseFloat(z)})).reduce((m,n) => ({x: m.x + n.x,
+                                                                                y: m.y + n.y,
+                                                                                z: m.z + n.z}))
+     console.log(result2)  
+     console.timeEnd("d")
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
