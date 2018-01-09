@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+  var things = [1, 2, 3, 4, 5];
+  things.map(function(t){
+      console.log(t);
+  });
+  things.map(t => console.log(t));
+  
+  function Person(){
+      var that = this;
+      that.age = 0;
+      setInterval(function growUp(){
+          that.age++;
+      }, 1000);
+  };
+   
+var p = new Person();
+console.log(p);
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

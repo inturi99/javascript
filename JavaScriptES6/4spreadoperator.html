@@ -11,12 +11,21 @@
        console.log(one)
    }
 
-var arr = [0, 1, 2];
+var arr = [0, 1, 2, 3, 4, 5];
  // foo(arr);
 
 //  foo.apply(null, arr);
  
- foo(...arr);
+ //foo(...arr);
+
+var [a,b,c, ...rest] = arr;
+console.log(a);
+console.log(b);
+console.log(rest);
+
+var arrayOne = ['thing', 'otherThing'];
+var arrayTwo = ['foo', 'bar', ...arrayOne, 'baz'];
+console.log(arrayTwo);
   </script>
 </head>
 

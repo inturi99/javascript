@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <link rel="stylesheet" href="">
+  <script type="text/javascript">
+   class Person{
+       constructor(age, height){
+           this.age = age;
+           this.height = height;
+           console.log(this.age,this.height);
+       }
+   }
+   
+   var p = new Person(28, '6 Feet');
+
+   class Foo {
+       constructor(first, second){
+           this.first = first;
+           this.second = second;
+       }
+       get total(){
+           return this.first + this.second;
+       }
+   }
+  var foo = new Foo(10, 20);
+  console.log(foo.total);
+
+ class Cat {
+     constructor(name){
+         this.name = name;
+     }
+     speak(){
+         console.log(this.name +' makes a noise !');
+     }
+ }
+
+class Lion extends Cat
+{
+    speak(){
+        super.speak();
+        console.log(this.name + 'roars.');
+    }
+}
+var cat = new Cat('Meow');
+//cat.speak()
+
+var lion = new Lion('meow');
+lion.speak();
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
