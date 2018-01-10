@@ -24,6 +24,24 @@
 var p = new Person();
 console.log(p);
 
+let number = [2, 3, 4, 5, 6];
+
+let double = number.map(n => n * 2);
+console.log(double);
+
+let person = {
+    name: 'Ryan',
+    hobbies: ['Robots','Computers', 'Internet'],
+    showHobbies: function(){
+        this.hobbies.forEach(hobby => {
+            console.log(`${this.name} like ${hobby}`);
+        });
+    }   
+}
+
+    person.showHobbies();
+
+
 
   </script>
 </head>
